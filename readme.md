@@ -1,4 +1,4 @@
-###  a course selling app
+# a course selling app
 Initialize a new Node.js project
 
 Add Express, jsonwebtoken, mongoose to it as a dependency
@@ -20,7 +20,7 @@ routing to better structure your routes)
 
 Create the frontend
 
-# Good to haves
+#### Good to haves
 
 Use cookies instead of JWT for auth
 
