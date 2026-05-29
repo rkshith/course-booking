@@ -1,5 +1,5 @@
 import express from 'express'
-
+import { userModel, adminModel, courseModel, purchaseModel } from '../db.js'
 
 const router = express.Router();
 

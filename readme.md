@@ -26,3 +26,16 @@ Use cookies instead of JWT for auth
 
 Add a rate limiting middleware
 Frontend in React
+
+
+
+to run mongodb locally 
+run this command 
+
+in backend -
+for starting the mongodb server
+ `docker compose up -d`
+
+for stopping -
+  `docker compose down`
+
