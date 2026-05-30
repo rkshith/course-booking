@@ -1,11 +1,9 @@
 import mongoose from "mongoose"
 import { Schema , ObjectId } from "mongoose"
+import express from "express";
+const app = express();
 
-await mongoose.connect("mongodb://localhost:27017/online_course_platform").then(() => {
-    console.log("connected to database");
-}).catch((err) => {
-    console.log("error connecting to database",err);
-})
+app.use(express.json());
 
 const userSchema = new Schema({
     first_name : String,
@@ -47,3 +45,8 @@ export const userModel = mongoose.model("user",userSchema)
 export const adminModel = mongoose.model("admin",adminSchema)
 export const courseModel = mongoose.model("course",courseSchema)
 export const purchaseModel = mongoose.model("purchase",purchaseSchema)
+
+export async function connectDB() {
+  await mongoose.connect("mongodb://localhost:27017/online_course_platform");
+  console.log("connected to database");
+}
