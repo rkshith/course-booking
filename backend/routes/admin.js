@@ -3,19 +3,24 @@ import { adminModel } from '../db.js'
 
 const router = express.Router()
 
-router.post("/login",(req,res)=>{
-    res.json({
-        "admin":"signin end point"
-    })
-
-})
-
 router.post("/signup",(req,res)=>{
-    res.json({
-        "admin":"regestration page"
-    })
+    const { email, password, first_name, last_name } = req.body;
+    // should hash the password before saving it to the database
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const admin = new adminModel({ email, password: hashedPassword, first_name, last_name });
+    admin.save().then(() => {
+        res.json({ message: "Admin registered successfully" });
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json({ message: "Internal server error" });
+    }) 
+})
+
+router.post("/login",(req,res)=>{
+    
 
 })
+
 
 router.post("/course",(req,res)=>{
     res.json({
