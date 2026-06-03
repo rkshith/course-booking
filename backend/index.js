@@ -6,6 +6,9 @@ import courseRouter from './routes/course.js'
 import adminRouter from './routes/admin.js'
 import mongoose from "mongoose";
 import { connectDB } from "./db.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express()   
 const router = express.Router();
@@ -39,3 +42,4 @@ main()
 
 
 
+// 1:11:00 watch the lect
